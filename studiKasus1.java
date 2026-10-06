@@ -9,7 +9,7 @@ public class studiKasus1 {
 
         int hargaPerCup = 18000;
         int jmlCup, uangBayar;
-        int ttlHarga, diskon, ttlBayar;
+        int ttlHarga, diskon = 0, ttlBayar;
         int kembalian, kurang;
 
         System.out.print("Masukkan jumlah cup: ");
@@ -19,5 +19,20 @@ public class studiKasus1 {
 
         ttlHarga = jmlCup * hargaPerCup;
 
+        if (ttlHarga >= 100000) {
+            diskon = ttlHarga * 10 / 100;
+        }
+         ttlBayar = ttlHarga - diskon;
+
+        System.out.println("Total harga: Rp " + ttlHarga);
+        System.out.println("Diskon: Rp " + diskon);
+        System.out.println("Total bayar: Rp " + ttlBayar);
+
+        if (uangBayar >= ttlBayar) {
+            System.out.println("Kembalian: Rp " +(uangBayar - ttlHarga));
+        } else {
+            System.out.println("Kurang: Rp " + (uangBayar - ttlBayar));
+        }
+        sc.close();
     }
 }
